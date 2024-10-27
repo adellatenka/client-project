@@ -1,6 +1,8 @@
+// function for sorting athlete results table
 function sortTable() {
     const sortSelector = document.getElementById('sort-select');
     sortSelector.addEventListener('change', function () {
+        // get selected sort filter from dropdown
         const sortMethod = this.value;
 
         var index = -1;
@@ -12,7 +14,6 @@ function sortTable() {
         else if (sortMethod === "time") {
             index = 1;
         }
-
         else if (sortMethod === "place") {
             index = 2;
             text = false;
@@ -21,17 +22,19 @@ function sortTable() {
         var table = document.getElementById("athlete-table");
         var sorting = true;
 
+        // loop while table is not fully sorted
         while (sorting) {
             sorting = false;
             var rows = table.rows;
 
             for (i = 1; i < (rows.length - 1); ++i) {
+                // get two table elements
                 var rowA = rows[i].getElementsByTagName("td")[index];
                 var rowB = rows[i + 1].getElementsByTagName("td")[index];
 
+                // compare elements
                 if (text) {
                     if (rowA.innerText.toLowerCase() > rowB.innerText.toLowerCase()) {
-                        console.log(rowA.innerText.toLowerCase(), rowB.innerText.toLowerCase())
                         rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                         sorting = true;
                         break;
@@ -39,7 +42,6 @@ function sortTable() {
                 }
                 else {
                     if (parseInt(rowA.innerText) > parseInt(rowB.innerText)) {
-                        console.log(rowA.innerText.toLowerCase(), rowB.innerText.toLowerCase())
                         rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                         sorting = true;
                         break;
@@ -51,40 +53,20 @@ function sortTable() {
     });
 }
 
-function sortAlpha() {
-    var table = document.getElementById("athlete-table");
-    var sorting = true;
-
-    while (sorting) {
-        sorting = false;
-        var rows = table.rows;
-
-        for (i = 1; i < (rows.length - 1); ++i) {
-            var rowA = rows[i].getElementsByTagName("td")[0];
-            var rowB = rows[i + 1].getElementsByTagName("td")[0];
-
-            if (rowA.innerText.toLowerCase() > rowB.innerText.toLowerCase()) {
-                console.log(rowA.innerText.toLowerCase(), rowB.innerText.toLowerCase())
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                sorting = true;
-                break;
-            }
-        }
-    }
-}
-
+// function for collapsing race comments column of table
 function collapse() {
     var section = document.getElementsByClassName("comment");
 
-    for (i = 0; i < (section.length - 1); ++i) {
-        if (section[i].style.display === "") {
+    for (i = 0; i < section.length; ++i) {
+        if (section[i].style.display === "block") {
             section[i].style.display = "none";
         } else {
-            section[i].style.display = "";
+            section[i].style.display = "block";
         }
     }
 }
 
+// run sorting listener after all content has loaded
 document.addEventListener('DOMContentLoaded', (event) => {
     sortTable();
 });

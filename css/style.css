@@ -1,14 +1,11 @@
 body {
     font-family: "Roboto", sans-serif;
     background-color: #FCFCFC;
-    font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    /* adaptable font sizing */
+    font-size: clamp(1.25rem, 2.5vw, 4rem);
 }
 
+/* for navigation bar and athlete header */
 .sticky {
     position: sticky;
     top: 0;
@@ -20,6 +17,13 @@ body {
 h1,
 h2 {
     color: #13315C;
+
+}
+
+/* set athlete name h1 to inline to minimize
+unecessary height in sticky header */
+h1 {
+    display: inline;
 }
 
 nav ul {
@@ -27,6 +31,7 @@ nav ul {
     margin: 0;
 }
 
+/* align navbar links */
 nav li {
     display: inline-block;
     margin-right: 5%;
@@ -34,6 +39,7 @@ nav li {
     padding: 0 2% 0 2%;
 }
 
+/* add hover animation for navbar links */
 nav li:hover {
     background-color: #8dc8ff81;
     transition: background-color 0.9s;
@@ -48,7 +54,7 @@ header {
     padding: 2%;
 }
 
-/* crop headshot to circle */
+/* crop athlete image to circle and add border */
 header img {
     display: inline;
     border: solid 2px #13315C;
@@ -58,10 +64,7 @@ header img {
     object-fit: cover;
 }
 
-h1 {
-    display: inline;
-}
-
+/* add scale animation to image on hover */
 header img:hover {
     transform: scale(1.1);
     transition: transform 0.9s;
@@ -84,16 +87,26 @@ th {
     color: #F7F7F2;
 }
 
+/* hide Athlete Results comments column initially */
+.comment {
+    display: none;
+}
+
+/* add alternate row coloring for tables */
 tbody tr:nth-child(2n) {
     background-color: #7e7e7e67;
 }
 
+/* add hover row coloring for tables */
 tbody tr:hover {
     background-color: #78b7ff64;
     transition: background-color 0.4s;
 }
 
+/* style links to meet pages in table and athlete
+names in men's team/women's team nav pages */
 a:link {
+    display: block;
     color: #0B2545;
 }
 
@@ -106,18 +119,20 @@ a:visited {
     color: #0B2545;
 }
 
-ul a:link {
-    color: #13315C;
-}
-
 footer {
     padding: 2%;
 }
 
+/* style for home page hero image */
 #home {
     background-image: linear-gradient(#ffffff, #ffffffe7), url("../images/full_team_pic.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+/* style for home page team name */
 #team-name {
     color: #13315C;
     font-style: italic;
@@ -129,18 +144,18 @@ footer {
     font-size: clamp(2rem, 4vw + 2rem, 3rem);
 }
 
-a {
-    display: block;
-}
-
+/* address prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
     * {
+        /* remove animations */
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
     }
 }
 
+/* address prefers-color-scheme,
+modify element colors for dark mode */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #1A1A1A;
