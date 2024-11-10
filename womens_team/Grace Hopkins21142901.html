@@ -21,7 +21,7 @@
    <div class="sticky">
       <nav>
          <ul>
-            <li><button id="menu" onclick="collapse('navlink')">Menu ↓</button></li>
+            <li><a href="#" id="menu" onclick="collapse(event, 'navlink')" aria-label="Toggle menu"><b>☰</b></a></li>
             <li><a href="#main">Skip to Main Content</a></li>
             <li class="navlink"><a href="../index.html">Home Page</a></li>
             <li class="navlink"><a href="../mens.html">Men's Team</a></li>
@@ -82,7 +82,7 @@
                               </thead>
 
                               <tbody>
-                              <button id="comments-toggle" onClick="collapse('comment')"> Show/Hide Race Comments </button>
+                              <a href="#" id="comments-toggle" onclick="collapse(event, 'comment')" >Show/Hide Race Comments</a>
                   
                                  <tr class="result-row">
                                     <td>
