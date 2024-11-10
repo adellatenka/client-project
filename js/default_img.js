@@ -5,4 +5,8 @@ document.querySelectorAll('img').forEach(img => {
         this.src = '../images/default_image.jpg'; 
         this.alt = "default athlete image"; 
     };
+
+    if (img.naturalWidth === 0) {
+        img.onerror();
+    }
 });
