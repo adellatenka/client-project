@@ -16,13 +16,14 @@ body {
 
 
 h1 {
-    font-size: clamp(2rem, 5vw, 6rem); 
-    display: block; /* set athlete name h1 to block on mobile */
+    font-size: clamp(2rem, 5vw, 6rem);
+    display: block;
+    /* set athlete name h1 to block on mobile */
     color: #13315C;
 }
 
 h2 {
-    font-size: clamp(1.5rem, 4vw, 5rem); 
+    font-size: clamp(1.5rem, 4vw, 5rem);
     color: #13315C;
 }
 
@@ -49,8 +50,20 @@ nav li:hover {
     display: block;
 }
 
+/* hide navigation links by default on mobile */
+/* sets initial state of links */
+/* vertical navbar on mobile */
 .navlink {
     display: none;
+}
+
+/* for toggling links */
+.navlink.hidden {
+    display: none;
+}
+
+.navlink.shown {
+    display: block;
 }
 
 nav a {
@@ -97,8 +110,23 @@ th {
 }
 
 /* hide Athlete Results comments column by default on mobile */
+/* sets initial state of comments */
 .comment {
     display: none;
+}
+
+/* link text for toggling comments should be block on mobile */
+#comments-toggle {
+    display: block;
+}
+
+/* for toggling comments */
+.comment.hidden {
+    display: none;
+}
+
+.comment.shown {
+    display: block;
 }
 
 /* add alternate row coloring for tables */
@@ -155,41 +183,41 @@ footer {
 
 /* tablet view, 600px or wider */
 @media (min-width: 600px) {
-    /* show Athlete Results comments column by default on larger screens */
-    .comment {
-        display: block;
-    }
 
-    body {
-        /* adaptable font sizing */
-        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    }
-    
-    h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem); /* Larger font size for h1 */
-        display: inline;
-        color: #13315C;
-    }
-    
-    h2 {
-        font-size: clamp(1.5rem, 3.5vw, 2.5rem); /* Slightly smaller than h1 */
-        color: #13315C;
-    }
-}
-
-/* desktop view, 1024px or wider */
-@media (min-width: 1024px) {
     /* align navbar links */
     #menu {
         display: none;
     }
 
-    .navlink {
-        display: inline-block;
+    /* show Athlete Results comments column by default on larger screens */
+    .comment {
+        display: block;
     }
 
-    header img {
-        width: 7%;
+    /* link text for toggling comments should be inline on larger screens */
+    #comments-toggle {
+        display: inline;
+    }
+
+    /* adjust font sizes on larger screens */
+    body {
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    }
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        display: inline;
+        color: #13315C;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+        color: #13315C;
+    }
+
+    /* horizonal navbar on larger screens */
+    .navlink {
+        display: inline-block;
     }
 }
 
@@ -200,11 +228,6 @@ footer {
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
-
-        -webkit-transition: none !important;
-        -moz-transition: none !important;
-        -o-transition: none !important;
-        transition: none !important;
     }
 }
 
