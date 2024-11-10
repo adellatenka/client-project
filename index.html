@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/collapse.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +25,16 @@
     <div class="sticky">
         <nav>
             <ul>
-                <li><a href="index.html">Home Page</a></li>
-                <li><a href="mens.html">Men's Team</a></li>
-                <li><a href="womens.html">Women's Team</a></li>
+               <li><button id="menu" onclick="collapse('navlink')">Menu ↓</button></li>
+               <li class="navlink"><a href="index.html">Home Page</a></li>
+               <li class="navlink"><a href="mens.html">Men's Team</a></li>
+               <li class="navlink"><a href="womens.html">Women's Team</a></li>
             </ul>
-        </nav>
+         </nav>
     </div>
-
-    <h1 id="team-name">SKYLINE XC</h1>
-
+    <main id = "main">
+        <h1 id="team-name">SKYLINE XC</h1>
+    </main>
 </body>
 
 </html>

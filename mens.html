@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Get your own FontAwesome ID -->
-<!--     <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script> -->
 
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/collapse.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,59 +25,60 @@
     <div class="sticky">
         <nav>
             <ul>
-                <li><a href="index.html">Home Page</a></li>
-                <li><a href="mens.html">Men's Team</a></li>
-                <li><a href="womens.html">Women's Team</a></li>
+               <li><button id="menu" onclick="collapse('navlink')">Menu ↓</button></li>
+               <li class="navlink"><a href="index.html">Home Page</a></li>
+               <li class="navlink"><a href="mens.html">Men's Team</a></li>
+               <li class="navlink"><a href="womens.html">Women's Team</a></li>
             </ul>
-        </nav>
+         </nav>
     </div>
-    <section id="athlete-result-table">
-        <h2>Men's Team</h2>
-        <a href="mens_team/Paxton Rose23349712.html">Paxton Rose</a>
-<a href="mens_team/Caspian Ruiz26460414.html">Caspian Ruiz</a>
-<a href="mens_team/Rowan Kim24801855.html">Rowan Kim</a>
-<a href="mens_team/Gustaf Finn21147171.html">Gustaf Finn</a>
-<a href="mens_team/Oskar MacArthur23349698.html">Oskar MacArthur</a>
-<a href="mens_team/Connor Jett24801564.html">Connor Jett</a>
-<a href="mens_team/Jackson Cichewicz26322046.html">Jackson Cichewicz</a>
-<a href="mens_team/Nicholas Yuan21615273.html">Nicholas Yuan</a>
-<a href="mens_team/Lawrence Wang26460421.html">Lawrence Wang</a>
-<a href="mens_team/Martin Gehrke19203161.html">Martin Gehrke</a>
-<a href="mens_team/Sage O'Lor26322021.html">Sage O'Lor</a>
-<a href="mens_team/Dylan Hanley23349680.html">Dylan Hanley</a>
-<a href="mens_team/Leo Chi26460401.html">Leo Chi</a>
-<a href="mens_team/Loki Bowser21147175.html">Loki Bowser</a>
-<a href="mens_team/Zeke Lafferty21142917.html">Zeke Lafferty</a>
-<a href="mens_team/Alex Nemecek18820260.html">Alex Nemecek</a>
-<a href="mens_team/Garrett Comer21615274.html">Garrett Comer</a>
-<a href="mens_team/Micah Winchell21147172.html">Micah Winchell</a>
-<a href="mens_team/Amir Abston25395576.html">Amir Abston</a>
-<a href="mens_team/Jude Shafer23349716.html">Jude Shafer</a>
-<a href="mens_team/Henry Strait22288700.html">Henry Strait</a>
-<a href="mens_team/Leland Weiser18820273.html">Leland Weiser</a>
-<a href="mens_team/Joowon Lee23349696.html">Joowon Lee</a>
-<a href="mens_team/Marlowe Hartnett21147174.html">Marlowe Hartnett</a>
-<a href="mens_team/Evan Leach26322027.html">Evan Leach</a>
-<a href="mens_team/Cole Harms26322018.html">Cole Harms</a>
-<a href="mens_team/Parker Razelun18820257.html">Parker Razelun</a>
-<a href="mens_team/Juan Luis Llanes23564880.html">Juan Luis Llanes</a>
-<a href="mens_team/Roman Stilwell25989957.html">Roman Stilwell</a>
-<a href="mens_team/Phylip Elliott23636797.html">Phylip Elliott</a>
-<a href="mens_team/Jack Robichaud18820279.html">Jack Robichaud</a>
-<a href="mens_team/William Johnson23564879.html">William Johnson</a>
-<a href="mens_team/Emmett Strait26322025.html">Emmett Strait</a>
-<a href="mens_team/Enshu Kuan23687884.html">Enshu Kuan</a>
-<a href="mens_team/Elliot Daley26322015.html">Elliot Daley</a>
-<a href="mens_team/Matthew Guikema23349678.html">Matthew Guikema</a>
-<a href="mens_team/Bruno Cifaldi21147176.html">Bruno Cifaldi</a>
-<a href="mens_team/Ethan Miller23349703.html">Ethan Miller</a>
-<a href="mens_team/Ezekiel Paloff23349707.html">Ezekiel Paloff</a>
-<a href="mens_team/Santiago Valenzuela23821078.html">Santiago Valenzuela</a>
-<a href="mens_team/Kyle Krasan21245954.html">Kyle Krasan</a>
-<a href="mens_team/Raphael Fournier23564875.html">Raphael Fournier</a>
-</section>
-
+    <main id="main">
+        <section id="athlete-result-table">
+            <h1>Men's Team</h1>
+            <a href="mens_team/Paxton Rose23349712.html">Paxton Rose</a>
+            <a href="mens_team/Caspian Ruiz26460414.html">Caspian Ruiz</a>
+            <a href="mens_team/Rowan Kim24801855.html">Rowan Kim</a>
+            <a href="mens_team/Gustaf Finn21147171.html">Gustaf Finn</a>
+            <a href="mens_team/Oskar MacArthur23349698.html">Oskar MacArthur</a>
+            <a href="mens_team/Connor Jett24801564.html">Connor Jett</a>
+            <a href="mens_team/Jackson Cichewicz26322046.html">Jackson Cichewicz</a>
+            <a href="mens_team/Nicholas Yuan21615273.html">Nicholas Yuan</a>
+            <a href="mens_team/Lawrence Wang26460421.html">Lawrence Wang</a>
+            <a href="mens_team/Martin Gehrke19203161.html">Martin Gehrke</a>
+            <a href="mens_team/Sage O'Lor26322021.html">Sage O'Lor</a>
+            <a href="mens_team/Dylan Hanley23349680.html">Dylan Hanley</a>
+            <a href="mens_team/Leo Chi26460401.html">Leo Chi</a>
+            <a href="mens_team/Loki Bowser21147175.html">Loki Bowser</a>
+            <a href="mens_team/Zeke Lafferty21142917.html">Zeke Lafferty</a>
+            <a href="mens_team/Alex Nemecek18820260.html">Alex Nemecek</a>
+            <a href="mens_team/Garrett Comer21615274.html">Garrett Comer</a>
+            <a href="mens_team/Micah Winchell21147172.html">Micah Winchell</a>
+            <a href="mens_team/Amir Abston25395576.html">Amir Abston</a>
+            <a href="mens_team/Jude Shafer23349716.html">Jude Shafer</a>
+            <a href="mens_team/Henry Strait22288700.html">Henry Strait</a>
+            <a href="mens_team/Leland Weiser18820273.html">Leland Weiser</a>
+            <a href="mens_team/Joowon Lee23349696.html">Joowon Lee</a>
+            <a href="mens_team/Marlowe Hartnett21147174.html">Marlowe Hartnett</a>
+            <a href="mens_team/Evan Leach26322027.html">Evan Leach</a>
+            <a href="mens_team/Cole Harms26322018.html">Cole Harms</a>
+            <a href="mens_team/Parker Razelun18820257.html">Parker Razelun</a>
+            <a href="mens_team/Juan Luis Llanes23564880.html">Juan Luis Llanes</a>
+            <a href="mens_team/Roman Stilwell25989957.html">Roman Stilwell</a>
+            <a href="mens_team/Phylip Elliott23636797.html">Phylip Elliott</a>
+            <a href="mens_team/Jack Robichaud18820279.html">Jack Robichaud</a>
+            <a href="mens_team/William Johnson23564879.html">William Johnson</a>
+            <a href="mens_team/Emmett Strait26322025.html">Emmett Strait</a>
+            <a href="mens_team/Enshu Kuan23687884.html">Enshu Kuan</a>
+            <a href="mens_team/Elliot Daley26322015.html">Elliot Daley</a>
+            <a href="mens_team/Matthew Guikema23349678.html">Matthew Guikema</a>
+            <a href="mens_team/Bruno Cifaldi21147176.html">Bruno Cifaldi</a>
+            <a href="mens_team/Ethan Miller23349703.html">Ethan Miller</a>
+            <a href="mens_team/Ezekiel Paloff23349707.html">Ezekiel Paloff</a>
+            <a href="mens_team/Santiago Valenzuela23821078.html">Santiago Valenzuela</a>
+            <a href="mens_team/Kyle Krasan21245954.html">Kyle Krasan</a>
+            <a href="mens_team/Raphael Fournier23564875.html">Raphael Fournier</a>
+        </section>
+    </main>
 </body>
 
 </html>
-   

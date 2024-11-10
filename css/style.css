@@ -14,16 +14,16 @@ body {
     padding: 1%
 }
 
-h1,
-h2 {
-    color: #13315C;
 
+h1 {
+    font-size: clamp(2rem, 5vw, 6rem); 
+    display: block; /* set athlete name h1 to block on mobile */
+    color: #13315C;
 }
 
-/* set athlete name h1 to inline to minimize
-unecessary height in sticky header */
-h1 {
-    display: inline;
+h2 {
+    font-size: clamp(1.5rem, 4vw, 5rem); 
+    color: #13315C;
 }
 
 nav ul {
@@ -32,8 +32,8 @@ nav ul {
 }
 
 /* align navbar links */
-nav li {
-    display: inline-block;
+nav ul li {
+    display: block;
     margin-right: 5%;
     list-style-type: none;
     padding: 0 2% 0 2%;
@@ -45,13 +45,22 @@ nav li:hover {
     transition: background-color 0.9s;
 }
 
+#menu {
+    display: block;
+}
+
+.navlink {
+    display: none;
+}
+
 nav a {
     color: #13315C;
     text-decoration: none;
+    display: none;
 }
 
 header {
-    padding: 2%;
+    padding: 0.5% 2%;
 }
 
 /* crop athlete image to circle and add border */
@@ -87,7 +96,7 @@ th {
     color: #F7F7F2;
 }
 
-/* hide Athlete Results comments column initially */
+/* hide Athlete Results comments column by default on mobile */
 .comment {
     display: none;
 }
@@ -144,6 +153,46 @@ footer {
     font-size: clamp(2rem, 4vw + 2rem, 3rem);
 }
 
+/* tablet view, 600px or wider */
+@media (min-width: 600px) {
+    /* show Athlete Results comments column by default on larger screens */
+    .comment {
+        display: block;
+    }
+
+    body {
+        /* adaptable font sizing */
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    }
+    
+    h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem); /* Larger font size for h1 */
+        display: inline;
+        color: #13315C;
+    }
+    
+    h2 {
+        font-size: clamp(1.5rem, 3.5vw, 2.5rem); /* Slightly smaller than h1 */
+        color: #13315C;
+    }
+}
+
+/* desktop view, 1024px or wider */
+@media (min-width: 1024px) {
+    /* align navbar links */
+    #menu {
+        display: none;
+    }
+
+    .navlink {
+        display: inline-block;
+    }
+
+    header img {
+        width: 7%;
+    }
+}
+
 /* address prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -151,6 +200,11 @@ footer {
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
+
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
     }
 }
 
